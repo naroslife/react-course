@@ -17,17 +17,17 @@ function Expenses(props) {
         )
     })
 
-    const [date, setDate] = useState('2021')
+    const [filteredYear, setFilteredYear] = useState('2021')
 
-    const dateChangeHandler = (changedDate) => {
-        setDate(changedDate)
-        console.log(date)
+    const filterChangeHandler = (selectedYear) => {
+        setFilteredYear(selectedYear)
+        console.log(filteredYear)
     }
     return (
         <div>
             <ExpensesFilter
-                onDateChange={dateChangeHandler}
-                selectedDate={date}
+                onDateChange={filterChangeHandler}
+                selectedDate={filteredYear}
             ></ExpensesFilter>
             <Card className='expenses'>{rows}</Card>
         </div>
